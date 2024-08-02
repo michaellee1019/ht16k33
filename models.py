@@ -15,7 +15,7 @@ import busio
 from adafruit_ht16k33 import segments, ht16k33
 
 class Ht16k33_Seg14x4(Generic):
-    MODEL = "michaellee1019:ht16k33:seg_14_x_4"
+    MODEL = "michaelleetest:ht16k33:seg_14_x_4"
     i2c = None
     segs = None
 
