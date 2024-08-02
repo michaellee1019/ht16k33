@@ -1,4 +1,5 @@
 viam-sdk
 pyinstaller
 git+https://github.com/viam-labs/1liner@d0ea441c4da50ea8a0e55182e533637854637439
+RPi.GPIO
 adafruit-circuitpython-ht16k33
