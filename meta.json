@@ -1,18 +1,23 @@
 {
-  "module_id": "michaelleetest:ht16k33",
+  "module_id": "michaellee1019:ht16k33",
   "visibility": "public",
   "url": "https://github.com/michaellee1019/ht16k33",
   "description": "A Viam module that controls LED segment displays based on ht16k33/vk16k33 chips.",
   "models": [
     {
       "api": "rdk:component:generic",
-      "model": "michaelleetest:ht16k33:seg_14_x_4"
+      "model": "michaellee1019:ht16k33:seg_14_x_4"
     }
   ],
+  "entrypoint": "dist/main",
+  "first_run": "",
   "build": {
-    "build": "sh build.sh",
+    "build": "./build.sh",
+    "setup": "./setup.sh",
     "path": "dist/archive.tar.gz",
-    "arch" : ["linux/arm64", "linux/amd64"]
-  },
-  "entrypoint": "dist/models"
+    "arch": [
+      "linux/amd64",
+      "linux/arm64"
+    ]
+  }
 }
