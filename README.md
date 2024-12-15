@@ -1,16 +1,16 @@
 # michaellee1019:ht16k33
 A Viam module that controls LED segment displays based on ht16k33/vk16k33 chips. This module is a Viam wrapper around the [Adafruit_CircuitPython_HT16K33](https://github.com/adafruit/Adafruit_CircuitPython_HT16K33/) library. The model has also been tested and works with the vk16k33 family of components which functionality is similar to the ht16k33.
 
-## Supported Hardware
-- [Adafruit 0.54" Quad Alphanumeric FeatherWing Display](https://www.adafruit.com/product/4261)
-- [2Pcs Digital Tube Module Orange 0.54 Inch 4 Digit Tube Module LED Display 4 Digit Tube LED Segment Display Module I2C Tube Clock Display for Arduino](https://www.amazon.com/gp/product/B0BXDL1LFT/)
-
-Note: Other hardware may work, but may have different segment mappings to the ht16k33/vk16k33. You should be able to use the `set_digit_raw` command to set the segments for your specific display.
-
 ## Model: seg_14_x_4
 This component supports 14-segment LED devices that have a four character display in each device. Depending on the device you can chain multiple displays together on the same channel, usually by soldering contacts that change the i2c address. Put each device address into the address array when wanting to string together the characters in each display, in the order that they are physically positioned from left to right.
 
 This model implements the [adafruit_ht16k33.segments.Seg14x4 API](https://docs.circuitpython.org/projects/ht16k33/en/latest/api.html#adafruit_ht16k33.segments.Seg14x4)
+
+### Supported Hardware
+- [Adafruit 0.54" Quad Alphanumeric FeatherWing Display](https://www.adafruit.com/product/4261)
+- [2Pcs Digital Tube Module Orange 0.54 Inch 4 Digit Tube Module LED Display 4 Digit Tube LED Segment Display Module I2C Tube Clock Display for Arduino](https://www.amazon.com/gp/product/B0BXDL1LFT/)
+
+Note: Other hardware may work, but may have different segment mappings to the ht16k33/vk16k33. You should be able to use the `set_digit_raw` command to set the segments for your specific display.
 
 ### Example Config
 ```
