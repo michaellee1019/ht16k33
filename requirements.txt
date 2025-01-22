@@ -1,5 +1,4 @@
-viam-sdk
-pyinstaller
-RPi.GPIO
-adafruit-circuitpython-ht16k33
-adafruit-extended-bus
+viam-sdk==0.34.0
+RPi.GPIO==0.7.1
+adafruit-circuitpython-ht16k33==4.6.10
+adafruit-extended-bus==1.0.2

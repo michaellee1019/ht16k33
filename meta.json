@@ -6,7 +6,9 @@
   "models": [
     {
       "api": "rdk:component:generic",
-      "model": "michaellee1019:ht16k33:seg_14_x_4"
+      "model": "michaellee1019:ht16k33:seg_14_x_4",
+      "markdown_link": "README.md#model-seg_14_x_4",
+      "short_description": "Controls 14 segment LED displays with ht16k33/vk16k33 chips."
     }
   ],
   "entrypoint": "dist/main",

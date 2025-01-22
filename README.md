@@ -1,7 +1,7 @@
-# michaellee1019:ht16k33
+# Module michaellee1019:ht16k33
 A Viam module that controls LED segment displays based on ht16k33/vk16k33 chips. This module is a Viam wrapper around the [Adafruit_CircuitPython_HT16K33](https://github.com/adafruit/Adafruit_CircuitPython_HT16K33/) library. The model has also been tested and works with the vk16k33 family of components which functionality is similar to the ht16k33.
 
-## Model: seg_14_x_4
+## Model seg_14_x_4
 This component supports 14-segment LED devices that have a four character display in each device. Depending on the device you can chain multiple displays together on the same channel, usually by soldering contacts that change the i2c address. Put each device address into the address array when wanting to string together the characters in each display, in the order that they are physically positioned from left to right.
 
 This model implements the [adafruit_ht16k33.segments.Seg14x4 API](https://docs.circuitpython.org/projects/ht16k33/en/latest/api.html#adafruit_ht16k33.segments.Seg14x4)
@@ -12,24 +12,31 @@ This model implements the [adafruit_ht16k33.segments.Seg14x4 API](https://docs.c
 
 Note: Other hardware may work, but may have different segment mappings to the ht16k33/vk16k33. You should be able to use the `set_digit_raw` command to set the segments for your specific display.
 
-### Example Config
-```
+### Configuration
+```json
 {
-      "model": "michaellee1019:ht16k33:seg_14_x_4",
-      "name": "segments",
-      "type": "generic",
-      "attributes": {
-        "address": ["0x70","0x71"]
-      },
-      "depends_on": []
+  "i2c_bus": <int>,
+  "addresses": ["<hex_i2c_address_1>","<hex_i2c_address_2>"],
+  "brightness": <int 0-100>,
+  "auto_write": <true/false>
 }
 ```
+
+### Attributes
+The following attributes are available for this model:
+
+| Name          | Type   | Inclusion | Description                |
+|---------------|--------|-----------|----------------------------|
+| `i2c_bus`     | int    | Optional  | The I2C bus number. Defaults to `1`.        |
+| `addresses`   | list   | Optional  | A list of I2C addresses in string hexadecimal format. Defaults to `["0x70"]`. |
+| `brightness`  | int    | Optional  | The percentage brightness of the display as a number between 0 and 100. Defaults to `100`. |
+| `auto_write`  | bool   | Optional  | Whether to automatically write to the display. Defaults to `true`. |
 
 ### Example Do Commands:
 
 #### Marquee
 Marquee text across the display once. Repeating marquee is currently not supported.
-```
+```json
 {
   "marquee": {
     "text": "MICHAELLEE1019"
@@ -38,7 +45,7 @@ Marquee text across the display once. Repeating marquee is currently not support
 ```
 
 Marquee text with a custom time between scrolls, in seconds
-```
+```json
 {
   "marquee": {
     "text": "MICHAELLEE1019",
@@ -49,7 +56,7 @@ Marquee text with a custom time between scrolls, in seconds
 
 #### Print
 Print text onto the display. This method does not clear existing characters so it is recommended to pad the text with space chacters.
-```
+```json
 {
   "print": {
     "value": "ELLO POPPET"
@@ -58,7 +65,7 @@ Print text onto the display. This method does not clear existing characters so i
 ```
 
 Print number. Optionally, provide `decimal` to round the number to a specific number of points.
-```
+```json
 {
   "print": {
     "value": 3.14159265,
@@ -88,7 +95,7 @@ Using the [Adafruit 0.54" Quad Alphanumeric FeatherWing Display](https://www.ada
 | `0b111111111111111` | Lights up all segments |
 
 The DoCommand payload to display a 0 on the second digit of a 14x4 display would be:
-```
+```json
 {
   "set_digit_raw": {
     "index": 1,
