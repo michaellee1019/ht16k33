@@ -3,6 +3,7 @@
   "visibility": "public",
   "url": "https://github.com/michaellee1019/ht16k33",
   "description": "A Viam module that controls LED segment displays based on ht16k33/vk16k33 chips.",
+  "markdown_link": "README.md",  
   "models": [
     {
       "api": "rdk:component:generic",
