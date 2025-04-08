@@ -17,7 +17,7 @@ Note: Other hardware may work, but may have different segment mappings to the ht
 {
   "i2c_bus": <int>,
   "addresses": ["<hex_i2c_address_1>","<hex_i2c_address_2>"],
-  "brightness": <int 0-100>,
+  "brightness": <float 0-1>,
   "auto_write": <true/false>
 }
 ```
@@ -29,7 +29,7 @@ The following attributes are available for this model:
 |---------------|--------|-----------|----------------------------|
 | `i2c_bus`     | int    | Optional  | The I2C bus number. Defaults to `1`.        |
 | `addresses`   | list   | Optional  | A list of I2C addresses in string hexadecimal format. Defaults to `["0x70"]`. |
-| `brightness`  | int    | Optional  | The percentage brightness of the display as a number between 0 and 100. Defaults to `100`. |
+| `brightness`  | float  | Optional  | The percentage brightness of the display as a number between 0 and 1. Defaults to `1`. |
 | `auto_write`  | bool   | Optional  | Whether to automatically write to the display. Defaults to `true`. |
 
 ### Example Do Commands:
